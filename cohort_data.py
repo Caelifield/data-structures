@@ -18,7 +18,15 @@ def all_houses(filename):
     houses = set()
 
     # TODO: replace this with your code
-
+    the_file = open(filename)
+    for line in the_file:
+      line = line.rstrip()
+      data = line.split("|")
+      house_name = data[2]
+      if house_name == "":
+        next
+      else:
+        houses.add(house_name)
     return houses
 
 
