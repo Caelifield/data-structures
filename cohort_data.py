@@ -69,10 +69,9 @@ def students_by_cohort(filename, cohort='All'):
       student_name = data[0] + " " + data[1]
       if cohort_name == "I" or cohort_name == "G":
         next
-      elif cohort_name == cohort:
+      elif cohort_name == cohort or cohort == "All":
         students.append(student_name)
-      elif cohort == "All":
-        students.append(student_name)  
+      
 
 
     return sorted(students)
