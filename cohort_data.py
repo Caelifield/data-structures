@@ -115,7 +115,7 @@ def all_names_by_house(filename):
     slytherin = []
     ghosts = []
     instructors = []
-
+    houses = [dumbledores_army,gryffindor,hufflepuff,ravenclaw,slytherin,ghosts,instructors]
     # TODO: replace this with your code
     the_file = open(filename)
     for line in the_file:
@@ -167,7 +167,14 @@ def all_data(filename):
 
     all_data = []
 
-    # TODO: replace this with your code
+    the_file = open(filename)
+    for line in the_file:
+      line = line.rstrip()
+      data = line.split("|")
+      first_name, last_name, house, advisor, cohort = data
+      full_name = first_name + " " + last_name
+      student_data = (full_name, house, advisor, cohort)
+      all_data.append(student_data)
 
     return all_data
 
@@ -194,6 +201,15 @@ def get_cohort_for(filename, name):
     """
 
     # TODO: replace this with your code
+
+    the_file = open(filename)
+    for line in the_file:
+      line = line.rstrip()
+      data = line.split("|")
+      first_name, last_name, house, advisor, cohort = data
+      full_name = first_name + " " + last_name
+      if full_name == name:
+        return cohort
 
 
 def find_duped_last_names(filename):
